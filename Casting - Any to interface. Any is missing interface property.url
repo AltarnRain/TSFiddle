@@ -1,0 +1,2 @@
+[InternetShortcut]
+URL=http://www.typescriptlang.org/play/index.html#src=interface%20Waarde%20%7B%0D%0A%20%20%20%20w%3A%20string%3B%0D%0A%20%20%20%20e%3A%20number%3B%0D%0A%7D%0D%0A%0D%0Avar%20x%3A%20any%20%3D%20%7B%20w%3A%20%22Hoi%22%20%7D%3B%0D%0Avar%20y%20%3D%20(x%20as%20Waarde)%3B%0D%0A%0D%0Aalert(y.w)%3B%0D%0Aalert(y.e)%3B
