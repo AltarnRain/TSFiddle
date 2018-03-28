@@ -1,0 +1,2 @@
+[InternetShortcut]
+URL=https://www.typescriptlang.org/play/index.html#src=interface%20personen%20%7B%0D%0A%20%20%20%20%5Bkey%3A%20string%5D%3A%20iemand%2C%20%20%20%20%0D%0A%7D%0D%0A%0D%0Ainterface%20iemand%20%7B%0D%0A%20%20%20%20naam%3A%20string%2C%0D%0A%20%20%20%20leeftijd%3A%20number%0D%0A%7D%0D%0A%0D%0Alet%20mij%3A%20personen%20%3D%20%7B%7D%3B%0D%0Amij.Onno%20%3D%20%7B%0D%0A%20%20%20%20leeftijd%20%3A%2039%2C%0D%0A%20%20%20%20naam%20%3A%20%22Onno%22%0D%0A%7D%0D%0A%0D%0Aalert(mij.Onno.leeftijd)%3B%0D%0A%0D%0A

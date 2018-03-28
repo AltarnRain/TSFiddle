@@ -1,0 +1,54 @@
+// We beginnen met een simpel JavaScript object.
+// die maak je zo aan. 
+var persoon = {
+    naam: "Ramon"
+}
+
+// ff een property er bij? Geen probleem. JavaScript vindt het prima.
+// TypeScript niet. Die zet rode lijntjes onder 'achterNaam'
+persoon.achterNaam = "De groot";
+
+// We zetten een functie op toonNaam om naam en achternaam te conbineren
+// en met een alert te laten zien.
+persoon.toonNaam = function (bericht: string) {
+    // 'this' verwijst altijd naar het active object.
+    // in dit geval persoon
+    alert(bericht + ": " + this.naam + " " + this.achterNaam);
+};
+
+// Werkt.
+persoon.toonNaam("Alles werkt");
+
+// Dit is een JavaScript geintje. Je kan ook een functie in een variabel proppen.
+var toonNaam = persoon.toonNaam;
+
+// 2e keer toonNaam. Maar nu krijg je undefined / undefined;
+toonNaam("Nu werkt het niet.");
+
+// Dat komt omdat "this" in de toonNaam functie niet meer bestaat! De functie wordt in
+// een nieuwe scope aangeroepen waar 'this' iets anders is dan persoon.
+// This verwijst nu naar 'window'. Dit is een globaal object.
+
+window.naam = "Ramon";
+window.achterNaam = "de Groot";
+
+// Alles weer ok.
+toonNaam("Nu werkt het weer want het window object kent naam en achternaam");
+
+// Nieuw persoon.
+var persoon2 = {
+    naam: "Onno",
+    achterNaam: "Invernizzi"
+}
+
+// We geven nieuw persoon 'ff' een functie.
+persoon2.toonNaam = toonNaam;
+persoon2.toonNaam("Persoon 2.");
+
+// Nu staat er "Onno Invernizzi" in de pop-up.
+
+// Dit is wat er mis ging in je ResultData event. De 'this' in 'this.results' verwees niet
+// meer naar je Chemistry component maar naar ResultData. 
+//
+// TypeScript neemt je in bescherming maar KnockOut is een JavaScript library
+// en doet JavaScript dingen. Dit is er een van.
